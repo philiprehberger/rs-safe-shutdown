@@ -1,0 +1,64 @@
+# rs-safe-shutdown
+
+Graceful shutdown coordination with timeout support for Rust. Provides a trigger/wait signal pattern, a coordinator that tracks in-flight tasks via RAII guards, and timeout-based shutdown with pending task reporting.
+
+No external dependencies — std only.
+
+## Installation
+
+Add to your `Cargo.toml`:
+
+```toml
+[dependencies]
+philiprehberger-safe-shutdown = "0.1"
+```
+
+## Usage
+
+```rust
+use philiprehberger_safe_shutdown::{ShutdownSignal, ShutdownCoordinator, ShutdownResult};
+use std::thread;
+use std::time::Duration;
+
+// Create a signal and coordinator
+let signal = ShutdownSignal::new();
+let coordinator = ShutdownCoordinator::new(signal.clone());
+
+// Register a task — returns an RAII guard
+let guard = coordinator.register("worker-1");
+
+// Spawn work that listens for the signal
+let sig = signal.clone();
+let handle = thread::spawn(move || {
+    // Simulate work, checking for shutdown
+    while !sig.is_triggered() {
+        thread::sleep(Duration::from_millis(10));
+    }
+    // Guard is dropped when the task finishes
+    drop(guard);
+});
+
+// Initiate graceful shutdown with a timeout
+let result = coordinator.shutdown(Duration::from_secs(5));
+handle.join().unwrap();
+
+match result {
+    ShutdownResult::Completed => println!("All tasks finished cleanly"),
+    ShutdownResult::TimedOut { pending } => {
+        println!("Timed out waiting for: {:?}", pending);
+    }
+}
+```
+
+## API
+
+| Type | Description |
+|---|---|
+| `ShutdownSignal` | Thread-safe trigger/wait signal. Clone to share across threads. |
+| `ShutdownCoordinator` | Tracks registered tasks and orchestrates graceful shutdown with a timeout. |
+| `ShutdownGuard` | RAII guard returned by `register()`. Automatically marks a task as complete on drop. |
+| `ShutdownResult` | Enum: `Completed` (all tasks finished) or `TimedOut { pending: Vec<String> }`. |
+
+## License
+
+MIT
