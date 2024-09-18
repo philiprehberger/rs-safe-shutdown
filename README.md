@@ -14,7 +14,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-philiprehberger-safe-shutdown = "0.1"
+philiprehberger-safe-shutdown = "0.1.4"
 ```
 
 ## Usage
