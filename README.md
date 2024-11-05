@@ -14,7 +14,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-philiprehberger-safe-shutdown = "0.1.4"
+philiprehberger-safe-shutdown = "0.1.5"
 ```
 
 ## Usage
@@ -62,6 +62,14 @@ match result {
 | `ShutdownCoordinator` | Tracks registered tasks and orchestrates graceful shutdown with a timeout. |
 | `ShutdownGuard` | RAII guard returned by `register()`. Automatically marks a task as complete on drop. |
 | `ShutdownResult` | Enum: `Completed` (all tasks finished) or `TimedOut { pending: Vec<String> }`. |
+
+
+## Development
+
+```bash
+cargo test
+cargo clippy -- -D warnings
+```
 
 ## License
 

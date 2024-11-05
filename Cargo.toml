@@ -1,10 +1,13 @@
 [package]
 name = "philiprehberger-safe-shutdown"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 authors = ["Philip Rehberger"]
 description = "Graceful shutdown coordination with timeout support for Rust"
 license = "MIT"
 repository = "https://github.com/philiprehberger/rs-safe-shutdown"
+readme = "README.md"
+rust-version = "1.70"
+documentation = "https://docs.rs/philiprehberger-safe-shutdown"
 keywords = ["shutdown", "graceful", "signal", "coordination", "server"]
 categories = ["concurrency", "asynchronous"]
