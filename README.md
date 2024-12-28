@@ -4,13 +4,9 @@
 [![Crates.io](https://img.shields.io/crates/v/philiprehberger-safe-shutdown.svg)](https://crates.io/crates/philiprehberger-safe-shutdown)
 [![License](https://img.shields.io/github/license/philiprehberger/rs-safe-shutdown)](LICENSE)
 
-Graceful shutdown coordination with timeout support for Rust. Provides a trigger/wait signal pattern, a coordinator that tracks in-flight tasks via RAII guards, and timeout-based shutdown with pending task reporting.
-
-No external dependencies — std only.
+Graceful shutdown coordination with timeout support for Rust
 
 ## Installation
-
-Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]

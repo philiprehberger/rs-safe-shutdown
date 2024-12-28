@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.5
+## 0.1.5 (2026-03-17)
 
 - Add readme, rust-version, documentation to Cargo.toml
 - Add Development section to README
