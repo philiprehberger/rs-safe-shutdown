@@ -2,12 +2,12 @@
 //!
 //! # Example
 //!
-//! ```rust,no_run
-//! use philiprehberger_safe_shutdown::ShutdownCoordinator;
-//! use std::time::Duration;
+//! ```rust
+//! use philiprehberger_safe_shutdown::{ShutdownSignal, ShutdownCoordinator};
 //!
-//! let coordinator = ShutdownCoordinator::new(Duration::from_secs(30));
-//! coordinator.register("http", || { /* shutdown server */ });
+//! let signal = ShutdownSignal::new();
+//! let coordinator = ShutdownCoordinator::new(signal.clone());
+//! let _guard = coordinator.register("http");
 //! ```
 
 use std::collections::HashSet;
