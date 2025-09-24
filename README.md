@@ -3,6 +3,7 @@
 [![CI](https://github.com/philiprehberger/rs-safe-shutdown/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/rs-safe-shutdown/actions/workflows/ci.yml)
 [![Crates.io](https://img.shields.io/crates/v/philiprehberger-safe-shutdown.svg)](https://crates.io/crates/philiprehberger-safe-shutdown)
 [![License](https://img.shields.io/github/license/philiprehberger/rs-safe-shutdown)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Graceful shutdown coordination with timeout support for Rust
 
