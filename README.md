@@ -2,7 +2,11 @@
 
 [![CI](https://github.com/philiprehberger/rs-safe-shutdown/actions/workflows/ci.yml/badge.svg)](https://github.com/philiprehberger/rs-safe-shutdown/actions/workflows/ci.yml)
 [![Crates.io](https://img.shields.io/crates/v/philiprehberger-safe-shutdown.svg)](https://crates.io/crates/philiprehberger-safe-shutdown)
+[![GitHub release](https://img.shields.io/github/v/release/philiprehberger/rs-safe-shutdown)](https://github.com/philiprehberger/rs-safe-shutdown/releases)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/rs-safe-shutdown)](https://github.com/philiprehberger/rs-safe-shutdown/commits/main)
 [![License](https://img.shields.io/github/license/philiprehberger/rs-safe-shutdown)](LICENSE)
+[![Bug Reports](https://img.shields.io/github/issues/philiprehberger/rs-safe-shutdown/bug)](https://github.com/philiprehberger/rs-safe-shutdown/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+[![Feature Requests](https://img.shields.io/github/issues/philiprehberger/rs-safe-shutdown/enhancement)](https://github.com/philiprehberger/rs-safe-shutdown/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
 [![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Graceful shutdown coordination with timeout support for Rust
@@ -11,7 +15,7 @@ Graceful shutdown coordination with timeout support for Rust
 
 ```toml
 [dependencies]
-philiprehberger-safe-shutdown = "0.1.7"
+philiprehberger-safe-shutdown = "0.1.8"
 ```
 
 ## Usage
@@ -68,6 +72,13 @@ cargo test
 cargo clippy -- -D warnings
 ```
 
+## Support
+
+If you find this package useful, consider giving it a star on GitHub — it helps motivate continued maintenance and development.
+
+[![LinkedIn](https://img.shields.io/badge/Philip%20Rehberger-LinkedIn-0A66C2?logo=linkedin)](https://www.linkedin.com/in/philiprehberger)
+[![More packages](https://img.shields.io/badge/more-open%20source%20packages-blue)](https://philiprehberger.com/open-source-packages)
+
 ## License
 
-MIT
+[MIT](LICENSE)
