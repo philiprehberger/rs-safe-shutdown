@@ -1,6 +1,6 @@
 [package]
 name = "philiprehberger-safe-shutdown"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Philip Rehberger"]
 description = "Graceful shutdown coordination with timeout support for Rust"
