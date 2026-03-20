@@ -1,3 +1,15 @@
+//! Graceful shutdown coordination with timeout support.
+//!
+//! # Example
+//!
+//! ```rust,no_run
+//! use philiprehberger_safe_shutdown::ShutdownCoordinator;
+//! use std::time::Duration;
+//!
+//! let coordinator = ShutdownCoordinator::new(Duration::from_secs(30));
+//! coordinator.register("http", || { /* shutdown server */ });
+//! ```
+
 use std::collections::HashSet;
 use std::fmt;
 use std::sync::{Arc, Condvar, Mutex};
