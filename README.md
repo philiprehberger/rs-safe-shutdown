@@ -10,7 +10,7 @@ Graceful shutdown coordination with timeout support for Rust
 
 ```toml
 [dependencies]
-philiprehberger-safe-shutdown = "0.1.6"
+philiprehberger-safe-shutdown = "0.1.7"
 ```
 
 ## Usage
